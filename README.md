@@ -2,7 +2,7 @@
 
 To create isomorphic [wire.js](https://github.com/cujojs/wire) specifications use `@client` and `@server` es7 decorators and webpack [loader](https://github.com/designeng/wire-decorators/blob/master/webpack/loaders/specLoader.js).
 
-#Usage:
+###Usage:
 Write in `some.spec.js` wire.js specification:
 
 ```js
@@ -46,7 +46,7 @@ wire(spec)
     })
     .otherwise(error => console.log("ERROR: ", error))
 ```
-#Webpack compilation:
+###Webpack compilation:
 In webpack.config.js:
 
 ```js
