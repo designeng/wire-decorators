@@ -1,0 +1,33 @@
+import server from './decorators/server';
+import client from './decorators/client';
+
+const spec = {
+    $plugins: [
+    ],
+
+    @client
+    clientEvents: {
+        click: 'clickHandler',
+        mouseover: 'mouseoverHandler',
+        mouseout: 'mouseoutHandler'
+    },
+
+    @server
+    serverComponent: {
+        create: {
+            module: (events) => {
+                return events;
+            },
+            args: [
+                {'$ref': 'clientEvents'}
+            ]
+        }
+    },
+
+    @server
+    anotherServerComponent: {
+        
+    }
+}
+
+export default spec;

@@ -1,0 +1,26 @@
+{
+  "name": "wire-decorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ENVIRONMENT=server node ./runner",
+    "webpack": "ENVIRONMENT=client webpack --profile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "esprima": "^3.0.0",
+    "essential-wire": "git://github.com/designeng/essential-wire",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "webpack": "^1.13.2"
+  },
+  "license": "ISC"
+}
