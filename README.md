@@ -1,7 +1,9 @@
 ##ES7 decorators and webpack loader
 
+To create isomorphic [wire.js](https://github.com/cujojs/wire) specifications use `@client` and `@server` es7 decorators and webpack [loader](https://github.com/designeng/wire-decorators/blob/master/webpack/loaders/specLoader.js).
+
 #Usage:
-Write in `some.spec.js`:
+Write in `some.spec.js` wire.js specification:
 
 ```js
 const spec = {
@@ -33,7 +35,19 @@ const spec = {
     }
 }
 ```
-In your webpack.config.js:
+Import compatible with webpack [essential-wire](https://github.com/designeng/essential-wire):
+```js
+import wire from 'essential-wire';
+import spec from './some.spec';
+
+wire(spec)
+    .then(context => {
+        //work with created context
+    })
+    .otherwise(error => console.log("ERROR: ", error))
+```
+#Webpack compilation:
+In webpack.config.js:
 
 ```js
 module: {
