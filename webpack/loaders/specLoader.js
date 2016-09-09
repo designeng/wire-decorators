@@ -16,8 +16,7 @@ const getComponentName = (str) => {
 module.exports = function specLoader(source) {
     var env = process.env.ENVIRONMENT;
 
-    if(env === CLIENT) {
-        var serverDecoratorMatches, 
+    var serverDecoratorMatches, 
             closingBracketMatches, 
             componentFragment, 
             componentSource,
@@ -27,6 +26,7 @@ module.exports = function specLoader(source) {
             offset,
             program;
 
+    if(env === CLIENT) {
         while(serverDecoratorMatches = SERVER_DECORATOR_REGEX.exec(source)) {
             offset = serverDecoratorMatches[0].length;
             // add `@server ` length to remove all server decorators from sub source string
