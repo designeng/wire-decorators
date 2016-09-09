@@ -6,6 +6,15 @@ To create isomorphic [wire.js](https://github.com/cujojs/wire) specifications us
 ###Project current mode
 Developers preview mode.
 
+###Preinstallation
+npm module `babel-plugin-transform-decorators-legacy` should be installed.
+
+Add `transform-decorators-legacy` to plugins list in `.babelrc` file.
+```json
+"plugins": [
+    ["transform-decorators-legacy"]
+]
+```
 
 ###Usage:
 Write in `some.spec.js` wire.js specification:
