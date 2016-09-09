@@ -1,6 +1,11 @@
 ##ES7 decorators and webpack loader
 
+###Description
 To create isomorphic [wire.js](https://github.com/cujojs/wire) specifications use `@client` and `@server` es7 decorators and webpack [loader](https://github.com/designeng/wire-decorators/blob/master/webpack/loaders/specLoader.js).
+
+###Project current mode
+Developers preview mode.
+
 
 ###Usage:
 Write in `some.spec.js` wire.js specification:
