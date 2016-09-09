@@ -59,7 +59,7 @@ module: {
         },
         {   
             test: /\.spec\.js$/,
-            # (TODO: publish specLoader to npm!) #
+            // TODO: publish specLoader to npm!
             loaders: [path.join(__dirname, './webpack/loaders/specLoader.js')],
             exclude: /node_modules/
         }
