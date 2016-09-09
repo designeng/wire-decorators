@@ -52,7 +52,7 @@ Define `process.env` variable `ENVIRONMENT` in `package.json` script:
     "start": "ENVIRONMENT=server node ./runner"
 }
 ```
-On the server side components marked as `client` will be removed from specification object.
+On the server side components marked as `client` will be removed from the specification object.
 
 ###Webpack compilation for client side
 In `webpack.config.js` (note the loaders order):
