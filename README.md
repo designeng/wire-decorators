@@ -53,7 +53,7 @@ wire(spec)
 ```
 
 ###Run on the server side
-Define ENVIRONMENT in `package.json` script:
+Define `process.env` variable `ENVIRONMENT` in `package.json` script:
 ```json
 "scripts": {
     "start": "ENVIRONMENT=server node ./runner"
