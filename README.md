@@ -80,7 +80,6 @@ const spec = {
     $plugins: [
     ],
 
-    @client
     clientEvents: {
         click: 'clickHandler',
         mouseover: 'mouseoverHandler',
@@ -92,4 +91,6 @@ const spec = {
     anotherServerComponent: null
 }
 ```
+Note, that all `@client` decorators were removed as well. Decorators `import` will be cleaned up on the optimization phase (uglifyJS).
+
 It's anough for specification wiring without errors.
