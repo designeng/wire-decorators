@@ -24,19 +24,12 @@ const spec = {
 
     @server
     serverComponent: {
-        create: {
-            module: (events) => {
-                return events;
-            },
-            args: [
-                {'$ref': 'clientEvents'}
-            ]
-        }
+        . . . . . 
     },
 
     @server
     anotherServerComponent: {
-        
+        . . . . . 
     }
 }
 ```
@@ -80,4 +73,22 @@ module: {
     ]
 },
 ```
-Then run `npm run webpack` command.
+Then run `npm run webpack` command. All component marked as `server` will be rewritten:
+```js
+const spec = {
+    $plugins: [
+    ],
+
+    @client
+    clientEvents: {
+        click: 'clickHandler',
+        mouseover: 'mouseoverHandler',
+        mouseout: 'mouseoutHandler'
+    },
+
+    serverComponent: null,
+
+    anotherServerComponent: null
+}
+```
+It's anough for specification wiring without errors.
