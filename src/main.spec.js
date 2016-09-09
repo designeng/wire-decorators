@@ -15,11 +15,11 @@ const spec = {
     @server
     serverComponent: {
         create: {
-            module: (events) => {
-                return events;
+            module: (comp) => {
+                //do smth
             },
             args: [
-                {'$ref': 'clientEvents'}
+                {'$ref': 'anotherServerComponent'}
             ]
         }
     },
