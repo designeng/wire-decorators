@@ -46,7 +46,16 @@ wire(spec)
     })
     .otherwise(error => console.log("ERROR: ", error))
 ```
-###Webpack compilation:
+
+###Run on the server side
+Define ENVIRONMENT in `package.json` script:
+```json
+"scripts": {
+    "start": "ENVIRONMENT=server node ./runner"
+}
+```
+
+###Webpack compilation for client side
 In webpack.config.js:
 
 ```js
