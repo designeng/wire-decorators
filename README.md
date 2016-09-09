@@ -93,4 +93,4 @@ const spec = {
 ```
 Note, that all `@client` decorators were removed as well. Decorators `import` will be cleaned up on the optimization phase (uglifyJS).
 
-It's anough for specification wiring without errors.
+It's enough for dependency graph order and wiring specification without errors.
