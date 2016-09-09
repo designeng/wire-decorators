@@ -1,6 +1,4 @@
 var path = require('path');
-var CleanSpecPlugin = require('./webpack/plugins/cleanSpec');
-
 var specLoader = require('./webpack/loaders/specLoader');
 
 module.exports = {
@@ -30,6 +28,5 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanSpecPlugin()
     ]
 }
