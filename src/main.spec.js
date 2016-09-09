@@ -1,5 +1,4 @@
-import server from './decorators/server';
-import client from './decorators/client';
+import { client, server } from './decorators/environment';
 
 const spec = {
     $plugins: [
