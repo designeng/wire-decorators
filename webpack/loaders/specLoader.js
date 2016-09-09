@@ -6,6 +6,7 @@ const SERVER = 'server';
 // const SERVER_DECORATOR_REGEX = /@server((\s)|(\([\S\s]+\)))?/g;
 // 
 const SERVER_DECORATOR_REGEX = /@server(\s)/g;
+const CLIENT_DECORATOR_REGEX = /@client(\s)/g;
 const CLOSING_BRACKET_REGEX = /\}/g;
 
 const getComponentName = (str) => {
@@ -17,18 +18,19 @@ module.exports = function specLoader(source) {
     var env = process.env.ENVIRONMENT;
 
     var serverDecoratorMatches, 
-            closingBracketMatches, 
-            componentFragment, 
-            componentSource,
-            serverDecoratorPosition,
-            lastBracketIncludedPosition,
-            subSource,
-            offset,
-            program;
+        closingBracketMatches, 
+        componentFragment, 
+        componentSource,
+        serverDecoratorPosition,
+        lastBracketIncludedPosition,
+        subSource,
+        offset,
+        program;
 
     if(env === CLIENT) {
         while(serverDecoratorMatches = SERVER_DECORATOR_REGEX.exec(source)) {
             offset = serverDecoratorMatches[0].length;
+            
             // add `@server ` length to remove all server decorators from sub source string
             serverDecoratorPosition = serverDecoratorMatches.index + offset;
             subSource = source.slice(serverDecoratorPosition);
@@ -50,6 +52,10 @@ module.exports = function specLoader(source) {
         }
     }
     
-    source = source.replace(SERVER_DECORATOR_REGEX, '');
+    // remove all @server/@client decorators
+    [SERVER_DECORATOR_REGEX, CLIENT_DECORATOR_REGEX].forEach((regex) => {
+        source = source.replace(regex, '');
+    });
+
     return source;
 };
