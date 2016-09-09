@@ -61,7 +61,7 @@ Define `process.env` variable `ENVIRONMENT` in `package.json` script:
 ```
 
 ###Webpack compilation for client side
-In webpack.config.js:
+In `webpack.config.js` (note the loaders order):
 
 ```js
 module: {
