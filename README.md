@@ -52,4 +52,4 @@ module: {
     ]
 },
 ```
-Then run `npm run webpack` script.
+Then run `npm run webpack` command.
